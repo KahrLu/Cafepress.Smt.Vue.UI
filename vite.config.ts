@@ -21,6 +21,9 @@ export default defineConfig({
       vueTemplate: true,
     }),
     Components({
+      dirs: ['components'],
+      extensions: ['vue'],
+      deep: true,
       resolvers: [ElementPlusResolver()],
     }),
   ],
