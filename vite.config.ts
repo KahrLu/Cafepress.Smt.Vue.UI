@@ -9,9 +9,15 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      imports: ['vue', '@vueuse/core'],
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/, // .md
+      ],
+      imports: ['vue', '@vueuse/core', 'pinia'],
       resolvers: [ElementPlusResolver()],
-      dirs: ['./composables'],
+      dirs: ['./composables', './plugins'],
       vueTemplate: true,
     }),
     Components({
