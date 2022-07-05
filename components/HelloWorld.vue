@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+const { counterStore } = useStore()
+const { count } = useStoreToRefs(counterStore)
+
 defineProps<{ msg: string }>()
 
-const count = ref(0)
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
-  <el-button>Element-Plus button</el-button>
+  <el-button>Elemet-Plus button</el-button>
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/"
